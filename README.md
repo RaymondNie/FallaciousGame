@@ -22,6 +22,7 @@ def main(Bob, random_events, maximum_event):
             break
         results.append(result)
         random_events.remove(random_num)
+        event_count += 1
         
     return(leave_the_pub(results))
 ```
