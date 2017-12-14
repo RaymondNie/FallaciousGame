@@ -8,7 +8,6 @@ public class scene1 : MonoBehaviour {
 
 	// Text elements on screen
 	public Text text;
-	public Text speaker;
 	public Text option1;
 	public Text option2;
 	public GameObject button1;
@@ -16,86 +15,105 @@ public class scene1 : MonoBehaviour {
 
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
-	private string currText;
+	private string currText; // curr text keeps track of the entire current dialogue
 	float scrollSpeed = 0.0125f;
 
 	// Different states of the scene
-	enum State{Start, Agree, Disagree, End};
+	enum State{s1, s2, s3, s4};
 	State currState;
 
-	// List of possible levels
-	int[] validLevelNumbers = new int [2] {0,2};
+	// Let text control the scrolling
+	public ScrollRect myScrollRect;
 
 	void Start(){
 		// Initialize start scene
-		currState = State.Start;
-		scrollingTextRoutine = scrollingText ();
+		currState = State.s1;
+
+		// Starting options
+		option1.text = "Well, It’s time to check it.\n";
+		option2.text = "Nah I would not go in a bar with such a stupid name.\n";
+
 		// Starting text
-		currText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut aliquam ligula, sed tempor magna. Aenean hendrerit justo eget neque blandit rutrum. Quisque in augue nisi. Maecenas quis lobortis sapien. Integer lobortis felis ut mi finibus, sit amet pharetra elit mollis. Sed aliquam turpis viverra mauris sodales tincidunt in vitae lectus. Proin vitae dolor rutrum, convallis lacus non, tincidunt nibh. Nulla facilisi. Fusce viverra tempus elit, id pulvinar lectus interdum at. Sed turpis nulla, mattis ac bibendum eu, sodales id justo. Morbi egestas quis orci a placerat. Fusce euismod porta tincidunt. Praesent ac quam id diam cursus sollicitudin. Vivamus ac orci mi. Etiam vitae magna a nibh molestie ultrices et vel sapien. Pellentesque sed finibus sapien.\n\n";
+		string dialogue = "Boring Wednesday nothing as usual. Really nothing to do after dinner. I look outside my car window and cannot find anything that could inspire a night plan. Driving without any purpose in this little town is probably the only way to kill my night time. Nah wait, is that a new bar? Oh come on, why the bar has to have a name called “foo”. Probably not a new bar then because I just skipped it before…\n";
+
+		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
 
 	void Update(){
 		if (Input.GetMouseButtonDown(0)) {
 			StopCoroutine (scrollingTextRoutine);
-			scrollingTextRoutine = scrollingText ();
 			text.text = currText;
 			button1.SetActive (true);
 			button2.SetActive (true);
+			Canvas.ForceUpdateCanvases();
+			myScrollRect.verticalNormalizedPosition = 0f;
 		}
 	}
 
 	public void changeState(bool option){
 		// Somewhere we keep track of current state and set transitions..
 		// If statements...
-		if (currState == State.Start) {
+		if (currState == State.s1) {
+			string dialogue;
 			if (option) {
-				stateAgree ();
+				dialogue = "Well, It’s time to check it.\n";
 			} else {
-				stateDisagree ();
+				dialogue = "Nah I would not go in a bar with such a stupid name. But seriously, what can I do tonight? Watch Maple Leafs replay at home? Already knew the result of losing. Forget it. Just go check the bar then.\n";
 			}
-		}
-		else if(currState == State.Agree || currState == State.Disagree){
-			stateEnd();
+			s2 (dialogue);
+		} else if (currState == State.s2) {
+			string dialogue;
+			if (option) {
+				dialogue = "Just Bud Light please.\n“No problem man.”\n";
+			} else {
+				dialogue = "Any recommendation?\nWe got a foobar special drink. Wanna try?\n“Sure”";
+			}
+			s3 (dialogue);
+		} else if (currState == State.s3 || currState == State.s4) {
+			LevelManager.load_level ();
 		}
 
 	}
 
-	IEnumerator scrollingText(){
+	IEnumerator scrollingText(string s){
+		currText += s;
 		button1.SetActive (false);
 		button2.SetActive (false);
-		for (int i = 0; i <= currText.Length; ++i) {
-			text.text = currText.Substring (0, i);
+		for (int i = 0; i < s.Length; ++i) {
+			text.text += s[i];
+			myScrollRect.verticalNormalizedPosition = 0f;
 			yield return new WaitForSeconds(scrollSpeed);
 		}
 		button1.SetActive (true);
 		button2.SetActive (true);
+		myScrollRect.verticalNormalizedPosition = 0f;
 	}
 
-	void stateAgree(){
-		// Sample state 1
-		currState = State.Agree;
-		speaker.text = "Raymond";
-		option1.text = "End game";
-		currText = "Raymond";
+	void s2(string s){
+		// Update current state
+		currState = State.s2;
+
+		// Change options
+		option1.text = "Just Bud Light please.\n";
+		option2.text = "Any recommendation?\n";
+
+		// Additional text
+		string dialogue = s + "I park along the street and walk in it. Well nothing looks special. “Alone, Sir?” The waiter asked. “Yeah but get me a booth thanks.” I just don’t understand why people like to sit on all those barstools. So uncomfortable. “What do you want, sir?”...\n";
+		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
 
-	void stateDisagree(){
-		// Sample state 1
-		currState = State.Disagree;
-		speaker.text = "Raymond";
-		option1.text = "End game";
-		currText = "You pressed disagree";
+	void s3(string s){
+		// Update current state
+		currState = State.s3;
+
+		option1.text = "Take a drink...\n";
+		option2.text = "";
+
+		// Additional text
+		string dialogue = s;
+		scrollingTextRoutine = scrollingText (dialogue);
+		StartCoroutine (scrollingTextRoutine);
 	}
-
-	void stateEnd(){
-		currState = State.End;
-		// Load next scene...
-		int randomIndex = Random.Range(0, validLevelNumbers.Length);
-		Application.LoadLevel(validLevelNumbers[randomIndex]);
-	}
-
-
-
 }

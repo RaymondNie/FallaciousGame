@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 066c97f565437467ca9fd67839a8486d
+timeCreated: 1513232917
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 100
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Interconnected Demo
+  fontNames:
+  - Interconnected Demo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

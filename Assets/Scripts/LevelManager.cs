@@ -1,12 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
-	
-	// Not sure if we going to use this since scenes should just be randomly loaded
-	public void load_level(string name){
-		Debug.Log("Level load requested for " + name);
-		Application.LoadLevel(name);
+	public static  List<string> levelList = new List<string>() {"Scene2"};
+
+	void Start(){
+		DontDestroyOnLoad (transform.gameObject);
 	}
-	
+
+	static void initializeLevels(){
+		levelList = new List<string> () {"Scene2" };
+	}
+
+	public static void load_level(){
+		if (levelList.Count == 0) {
+			SceneManager.LoadScene("GameOver");
+			initializeLevels ();
+		} else {
+			int randomIndex = Random.Range (0, levelList.Count);
+			string levelName = levelList [randomIndex];
+			SceneManager.LoadScene(levelName);
+			levelList.RemoveAt (randomIndex);
+		}
+	}
+
+	public static void load_specific_level(string s){
+		SceneManager.LoadScene(s);
+	}
+
 }

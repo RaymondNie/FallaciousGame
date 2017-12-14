@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6a5c3fd1b972f4e359fb7363c5a13942
+timeCreated: 1513233222
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 300
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BetterPixels
+  fontNames:
+  - BetterPixels
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
