@@ -12,4 +12,4 @@ Stack: Unity
 
 Author: [Stid Zhang](https://github.com/StidZhang) and [Raymond Nie](https://github.com/RaymondNie)
 
-Live at https://raymondnie.github.io/rhnie.me/phil_final/index.html
+Live at https://raymondnie.github.io/rhnie.me/Foobar1024/index.html
