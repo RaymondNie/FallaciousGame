@@ -2,27 +2,14 @@
 
 ## General information
 
-Environment: THE pub
+Name: Foobar1024
 
-Variable: Bob, a mid-aged, single?, bald?, white? man
+Purpose: PHIL 145: Critical Thinking Final Project
 
+Category: Text Game
 
-## Outline
+Stack: Unity
 
-```python
-def main(Bob, random_events, maximum_event):
-    event_count = 0
-    results = []
-    enter_the_pub(Bob)
+Author: [Stid Zhang](https://github.com/StidZhang) and [Raymond Nie](https://github.com/RaymondNie)
 
-    for event_count <= maximum_event:
-        random_num = random_gen(len(random_events))
-        result = random_events[random_num].happen()
-        if (not result):
-            break
-        results.append(result)
-        random_events.remove(random_num)
-        event_count += 1
-        
-    return(leave_the_pub(results))
-```
+Live at https://raymondnie.github.io/rhnie.me/phil_final/index.html
