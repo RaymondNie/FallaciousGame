@@ -144,7 +144,7 @@ public class scene7 : MonoBehaviour {
 		currState = State.s4;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "Time to reveal...\n\nMike chooses tails. Of course I didn’t get anything for free.\n\n";

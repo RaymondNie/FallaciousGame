@@ -137,7 +137,7 @@ public class scene6 : MonoBehaviour {
 
 		resetButtons();
 		option1.GetComponentInChildren<Text>().text = "“Have fun with your friends then.”";
-		option2.GetComponentInChildren<Text>().text = "“I really enjoyed this conversation with you. I think I might need some advice for being a vegetarian in the future. Can I have your number?” ";
+		option2.GetComponentInChildren<Text>().text = "“I really enjoyed this conversation with you. Can I have your number?”";
 
 		// Additional text
 		string dialogue = s + "she laughs, “By the way, what do you do during the day?”\n\n“Oh I’m a professor who teaches logic.”\n\n“That’s really special. Logic. Emm...what are some interesting things that you teach about?”\n\n";
@@ -154,7 +154,7 @@ public class scene6 : MonoBehaviour {
 		currState = State.s4;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "Well, things can get better. Always have someone else in the bar.\n\n";

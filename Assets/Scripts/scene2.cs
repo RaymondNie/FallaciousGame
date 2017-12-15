@@ -145,7 +145,7 @@ public class scene2 : MonoBehaviour {
 		currState = State.s4;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...";
+		option1.GetComponentInChildren<Text> ().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "\"Hmmm, I guess you're right. Critical thinking isn't my strong suit. Well it's time for me to get going now! See ya.\"\n\n";

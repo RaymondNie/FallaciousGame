@@ -157,7 +157,7 @@ public class scene8 : MonoBehaviour {
 		currState = State.s5;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...\n";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "He seems to be so pissed off, muttering how I’m such an inconsiderate person and not even a true Canadian and leaves.  Such a low energy guy. I should never become a guy like him no matter what happens to me, I thought to myself, ignoring the fact that he actually got a house and a wife which I don’t.";

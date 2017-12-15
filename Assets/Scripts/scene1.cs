@@ -155,7 +155,7 @@ public class scene1 : MonoBehaviour {
 		currState = State.s2;
 
 		// Additional text
-		string dialogue = s + "“James.”\n\nAfter a friendly handshake, James asked: “I’m a software developer, work across the street. How about you?”\n\n";
+		string dialogue = s + "“James.”\n\nAfter a friendly handshake, James says, “I’m a software developer, work across the street. How about you?”\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 
@@ -257,7 +257,7 @@ public class scene1 : MonoBehaviour {
 		currState = State.s9;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...\n";
+		option1.GetComponentInChildren<Text> ().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "Magic beats logic. Not surprising though, especially when your final goal is trying to pick up a girl.\n\n";

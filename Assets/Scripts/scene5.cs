@@ -179,7 +179,7 @@ public class scene5 : MonoBehaviour {
 		currState = State.s7;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "I finally get chance to give my reasons, listing some of Trump’s policies on immigrants and analyzing them for Martin. He seems to be impatient, insisting that all my points are just made up by the puppet liberal media.\n\n “So brainwashed.” Martin stands up and leaves the booth angrily. I should probably get membership at a different gym.\n";
@@ -192,7 +192,7 @@ public class scene5 : MonoBehaviour {
 		currState = State.s6;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "I don’t want to get into a bar fight with a fitness professional. There are situations where one should accept appeal to force. We then talk about some local news in a friendly environment until he has to leave for an appointment. ";

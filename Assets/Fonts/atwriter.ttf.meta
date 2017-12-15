@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ef57c5f28578940b2b9b5a0f6eddaf1c
+timeCreated: 1513311127
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 500
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Another Typewriter
+  fontNames:
+  - Another Typewriter
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 1
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

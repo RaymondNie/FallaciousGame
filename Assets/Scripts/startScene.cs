@@ -12,7 +12,8 @@ public class startScene : MonoBehaviour {
 	public Text option2;
 	public GameObject button1;
 	public GameObject button2;
-
+	public GameObject button3;
+	public GameObject button4;
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
@@ -30,7 +31,7 @@ public class startScene : MonoBehaviour {
 		currState = State.s1;
 
 		// Starting options
-		option1.text = "Well, It’s time to check it.\n";
+		option1.text = "Well, It’s time to check it out.\n";
 		option2.text = "Nah I would not go in a bar with such a stupid name.\n";
 
 		// Starting text
@@ -46,6 +47,8 @@ public class startScene : MonoBehaviour {
 			text.text = currText;
 			button1.SetActive (true);
 			button2.SetActive (true);
+			button3.SetActive (true);
+			button4.SetActive (true);
 			Canvas.ForceUpdateCanvases();
 			myScrollRect.verticalNormalizedPosition = 0f;
 		}
@@ -80,6 +83,8 @@ public class startScene : MonoBehaviour {
 		currText += s;
 		button1.SetActive (false);
 		button2.SetActive (false);
+		button3.SetActive (false);
+		button4.SetActive (false);
 		for (int i = 0; i < s.Length; ++i) {
 			text.text += s[i];
 			myScrollRect.verticalNormalizedPosition = 0f;
@@ -87,6 +92,8 @@ public class startScene : MonoBehaviour {
 		}
 		button1.SetActive (true);
 		button2.SetActive (true);
+		button3.SetActive (true);
+		button4.SetActive (true);
 		myScrollRect.verticalNormalizedPosition = 0f;
 	}
 
@@ -108,7 +115,7 @@ public class startScene : MonoBehaviour {
 		// Update current state
 		currState = State.s3;
 
-		option1.text = "Take a drink...\n";
+		option1.text = "I take a sip of my drink...\n";
 		option2.text = "";
 
 		// Additional text

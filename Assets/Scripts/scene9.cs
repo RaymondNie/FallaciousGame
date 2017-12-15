@@ -173,7 +173,7 @@ public class scene9 : MonoBehaviour {
 		currState = State.s5;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...\n";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "Whatever. I don’t want to waste time on this stupid question.\n\n“You have to admit right?”, he says,";
@@ -193,7 +193,7 @@ public class scene9 : MonoBehaviour {
 		currState = State.s6;
 
 		resetButtons ();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...\n";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "“What do you mean?”\n\n“If you add the numbers up, you would find 9 out of 22 Ontario people like whisky.”\n\nI take out my phone and open the calculator, “That’s roughly 41%, just more than the number 4 out of 10 from you guys.”\n\n“Are you serious? How can this even be possible?”\n\n“It’s actually something called Simpson’s Paradox. Only happen because too many Quebec females are here.”\n\nI point at the number 1/4 , and it seems like he understands the situation.\n\n“Ces femelles are just dragging us behind.“\n\n";

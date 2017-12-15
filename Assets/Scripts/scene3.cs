@@ -145,7 +145,7 @@ public class scene3 : MonoBehaviour {
 		currState = State.s4;
 
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...";
+		option1.GetComponentInChildren<Text>().text = LevelManager.end_text ();
 
 		// Additional text
 		string dialogue = s + "Tong agrees with the bet without hesitation and calls the bartender. It’s a gold bottle.\n\nThe bartender says: “You guys want to check the limited edition as well? It’s legit and the owner of the bar gave this one to me himself.”\n\n";

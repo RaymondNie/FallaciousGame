@@ -34,6 +34,18 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	public static string end_text(){
+		if (levelCounter == 1) {
+			return "I take another sip of my drink...";
+		} else if (levelCounter == 2) {
+			return "My meal finally comes. It tastes like nothing.  I think about what just happened until...";
+		} else if (levelCounter == 3) {
+			return "I start to feel a bit sleepy with the help of alcohol.";
+		} else {
+			return "I take a sip of my drink...";
+		}
+	}
+
 	public static void load_specific_level(string s){
 		SceneManager.LoadScene(s);
 	}
