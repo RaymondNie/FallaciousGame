@@ -9,7 +9,7 @@ public class scene2 : MonoBehaviour {
 	// Text elements on screen
 	//public Text text;
 	public Text text;
-    // Buttons
+	// Buttons
 	public GameObject option1;
 	public GameObject option2;
 	public GameObject option3;
@@ -21,24 +21,25 @@ public class scene2 : MonoBehaviour {
 	float scrollSpeed = 0.0125f;
 
 	// Different states of the scene
-	enum State{s1, s2, s3, s4, s5, s6, s7, s8, s9, s10};
+	enum State{s1, s2, s3, s4, s5, s6};
 	State currState;
 
 	// Let text control the scrolling
 	public ScrollRect myScrollRect;
 
-
+	// Date counter
+	int day = 355;
 	void Start(){
 		// Initialize start scene
 		currState = State.s1;
 
 		// Starting options
-		option1.GetComponentInChildren<Text>().text = "Of course not. Chris here.\n";
-		option2.GetComponentInChildren<Text>().text = "You already sat down man. But nevermind. Chris here.\n";
+		option1.GetComponentInChildren<Text>().text = "“Did you get separated from your parents?”\n\n";
+		option2.GetComponentInChildren<Text>().text = "\"Are you old enough to be in here?\"\n\n";
 
 		// Starting text
-		string dialogue = "A handsome young man just come in and sit opposite me.\n“You wouldn’t mind, right?”\n";
-
+		string dialogue = "A young looking girl walks down and sits beside me, I notice that she is drinking from a “Minute Maid” orange juice box.\n\n";
+		dialogue += "\"Heya mister, I'm Sally nice to meet ya!\" she exclaims.\n\n\"Nice to meet you miss, my name is Chris\"\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
@@ -50,12 +51,12 @@ public class scene2 : MonoBehaviour {
 		option4.SetActive (active);
 	}
 
-    void resetButtons(){
+	void resetButtons(){
 		option1.GetComponentInChildren<Text>().text = "";
 		option2.GetComponentInChildren<Text>().text = "";
 		option3.GetComponentInChildren<Text>().text = "";
 		option4.GetComponentInChildren<Text>().text = "";
-    }
+	}
 
 	void Update(){
 		if (Input.GetMouseButtonDown(0)) {
@@ -71,67 +72,24 @@ public class scene2 : MonoBehaviour {
 		if (currState == State.s1) {
 			string dialogue;
 			if (option == 1) {
-				dialogue = "Of course not. Chris here.\n";
+				dialogue = "\"Did you get separated from your parents?\"\n\n";
 				s2 (dialogue);
 			} else if (option == 2) {
-				dialogue = "You already sat down man. But nevermind. Chris here.\n";
+				dialogue = "\"Are you old enough to be in here?\"\n\n";
 				s2 (dialogue);
 			}
 		} else if (currState == State.s2) {
 			string dialogue;
 			if (option == 1) {
-				dialogue = "Just a boring guy on a boring Wednesday night.\n";
+				dialogue = "\"The difference mam is 1 day.\"\n\n";
+				// decrement day
+				--day;
 				s3 (dialogue);
 			} else if (option == 2) {
-				dialogue = "I'm a professor. I teach logic.\n";
-				s4 (dialogue);
-			}
-		} else if (currState == State.s3) {
-			if (option == 1) {
-				string dialogue = "I'm a professor. I teach logic.\n";
+				dialogue = "\"By that logic you could continue and argue a baby should be able to drink!\"\n\n";
 				s4 (dialogue);
 			}
 		} else if (currState == State.s4) {
-			if (option == 1) {
-				string dialogue = "“It’s not that fun when you are the only guy in the classroom understand logic.”\n";
-				s5 (dialogue);					
-			}
-		} else if (currState == State.s5) {
-			string dialogue;
-			if (option == 1) {
-				dialogue = "“OK I would not reject a free drink chance.”\n";
-				s6 (dialogue);
-			} else if (option == 2) {
-				dialogue = "“I will buy you a drink if I cannot get it right.”\n";
-				s6 (dialogue);
-			}
-		} else if (currState == State.s6) {
-			string dialogue;
-			if (option == 1) {
-				dialogue = "“Bottle on the left.”\n";
-				s7 (dialogue, "left");
-			} else if (option == 2) {
-				dialogue = "“Bottle in the middle.”\n";
-				s7 (dialogue, "middle");
-			} else if (option == 3) {
-				dialogue = "“Bottle on the right.”\n";
-				s7 (dialogue, "right");
-			}
-		} else if (currState == State.s7) {
-			string dialogue;
-			if (option == 1) {
-				dialogue = "Logic professor should have rational choice. “I’ll switch.”";
-				s8 (dialogue);
-			} else if (option == 2) {
-				dialogue = "He is trying to trick me here. “I’ll stay.”";
-				s8 (dialogue);
-			}
-		} else if (currState == State.s8) {
-			if (option == 1) {
-				string dialogue = "“Nice trick. Good luck and have fun then.”";
-				s9 (dialogue);
-			}
-		} else if (currState == State.s9) {
 			if (option == 1) {
 				LevelManager.load_level ();
 			}
@@ -154,27 +112,30 @@ public class scene2 : MonoBehaviour {
 		// Update current state
 		currState = State.s2;
 
+		// Change options
+		resetButtons();
+		option1.GetComponentInChildren<Text>().text = "\"The difference mam is 1 day.\"";
+		option2.GetComponentInChildren<Text>().text = "\"By that logic you could continue and argue a baby should be able to drink!\"";
+
 		// Additional text
-		string dialogue = s + "“James.” After a friendly handshake, James asked: “I’m a software developer. Work across the street. How about you?”\n";
+		string dialogue = s + "She laughs, \"I'm already 21. I'm an engineering student in university. Just getting my daily intake of vitamin C if you were wondering about my drink\"\n\n";
+		dialogue += "A student. I shouldn’t mention I’m a prof then.\n\nIt dawns upon me that I haven't thought about my nutrient intake in all the time I've spent in undergrad and postgrad life...\n\n";
+		dialogue += "Maybe I need some vitamin C as well...\n\n";
+		dialogue += "\"Anyways, speaking about age, I have many friends who are just a few days off from being 19.  They can’t come to this bar with me so I always just end up meeting creepy old people\", she says\n\n";
+		dialogue += "I wonder if she is referring to me specifically.\n\n";
+		dialogue += "I mean, what's the difference between 19 years and 18 years plus 355 days right?\n\n";
+
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
-
-		// Change options
-        resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Just a boring guy on a boring Wednesday night.\n";
-		option2.GetComponentInChildren<Text>().text = "I'm a professor. I teach logic.\n";
 	}
 
 
 	void s3(string s){
 		// Update current state
-		currState = State.s3;
-
-        resetButtons();
-		option1.GetComponentInChildren<Text>().text = "I'm a professor. I teach logic.\n";
+		currState = State.s2;
 
 		// Additional text
-		string dialogue = s + "“That’s why you come to a bar”, he said, “But seriously what do you do?”\n";
+		string dialogue = s + "\"Exactly! I mean, what's the difference between 18 years plus " + (day+1) + " days and 18 years plus " + day + " days right?\"\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
@@ -183,81 +144,13 @@ public class scene2 : MonoBehaviour {
 		// Update current state
 		currState = State.s4;
 
-        resetButtons();
-		option1.GetComponentInChildren<Text>().text = "“It’s not that fun when you are the only guy in the classroom understand logic.”\n";
-
-		// Additional text
-		string dialogue = s + "“Sounds interesting then”, he said, “Logic is fun. Then why are you bored?”\n";
-		scrollingTextRoutine = scrollingText (dialogue);
-		StartCoroutine (scrollingTextRoutine);
-	}
-
-	void s5(string s){
-		// Update current state
-		currState = State.s5;
-
-        resetButtons();
-		option1.GetComponentInChildren<Text>().text = "“OK I would not reject a free drink chance.”";
-		option2.GetComponentInChildren<Text>().text = "“I will buy you a drink if I cannot get it right.”";
-
-		// Additional text
-		string dialogue = s + "“I got it.” He says. “Professor that teaches logic. I think I got something fun for you though.” He asks the waiter for three plastic bottles, with a ping pong ball that he pulled out of nowhere. “I’m also an amateur magician. Your drink is on me if you could guess where is the ball correctly.”\n";
-		scrollingTextRoutine = scrollingText (dialogue);
-		StartCoroutine (scrollingTextRoutine);
-	}
-
-	void s6(string s){
-		// Update current state
-		currState = State.s6;
-
-		resetButtons ();
-		option1.GetComponentInChildren<Text>().text = "The one in the left.";
-        option2.GetComponentInChildren<Text>().text = "The one in the middle.";
-        option3.GetComponentInChildren<Text>().text = "The one on the right.";
-
-		// Additional text
-		string dialogue = s + "Classic trick. Ball under the left bottle, reorder the bottles with crazy fast speed. It’s hard to follow all the moves but I think the ball is still under the bottle on the left. “Which one?”\n";
-		scrollingTextRoutine = scrollingText (dialogue);
-		StartCoroutine (scrollingTextRoutine);
-	}
-
-	void s7(string s, string cup){
-		// Update current state
-		currState = State.s7;
-
 		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Logic professor should have rational choice. “I’ll switch.”\n";
-		option2.GetComponentInChildren<Text>().text = "He is trying to trick me here. “I’ll stay.”\n";
+		option1.GetComponentInChildren<Text>().text = "Take a drink...";
 
 		// Additional text
-		string dialogue = s + "“Are you sure?” He revealed the bottle on the " + cup + ", nothing inside.\n“I’ll give you a chance to switch. What’s your choice now?” \nWell, a Monty Hall problem now. This guy must have learned some logic before and trying to test me now.\n";
-		scrollingTextRoutine = scrollingText (dialogue);
-		StartCoroutine (scrollingTextRoutine);
-	}
-
-	void s8(string s){
-		// Update current state
-		currState = State.s8;
-
-		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "“Nice trick. Good luck and have fun then.”\n";
-
-		// Additional text
-		string dialogue = s + "He then reveals all the bottles and the bottle I chose at first had the ball! “You forgot I’m a magician.” \n\nOh come on. This is cheating. “Sorry about that Chris”, he says,\n\n";
-		dialogue += "“But you are such a good man so don’t worry, your drink is on me.”\n\n“Thanks for that, James.” He stands up and say: “No problem. Thanks for your time though, finish my magic trick practicing. Saw that girl over there? That’s my actual target tonight.” I look at the direction he points to, well, seems like I’m just the warm-up round for James.\n";
-		scrollingTextRoutine = scrollingText (dialogue);
-		StartCoroutine (scrollingTextRoutine);
-	}
-
-	void s9(string s){
-		// Update current state
-		currState = State.s9;
-
-		resetButtons();
-		option1.GetComponentInChildren<Text>().text = "Take a drink...\n";
-
-		// Additional text
-		string dialogue = s + "Magic beats logic. Not surprising though, especially when your final goal is trying to pick up a girl.\n";
+		string dialogue = s + "\"Hmmm, I guess you're right. Critical thinking isn't my strong suit. Well it's time for me to get going now! See ya.\"\n\n";
+		dialogue += "I wonder how long she would have kept going...\n\nShe was iterating the textbook example of the flaw of the fallacy of continuum without realizing it.\n\n";
+		dialogue += "\"Take care Sally. You should come to my class on some day\", I think to myself. The university should put logic in the mandatory course list for engineering students.\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
