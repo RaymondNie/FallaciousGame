@@ -18,7 +18,7 @@ public class scene9 : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4, s5, s6};
@@ -203,7 +203,7 @@ public class scene9 : MonoBehaviour {
 			dialogue += "“Men are just better. Just like you, also love whisky. Great work!” I’m not sure if he really understood the Simpson’s Paradox now, but just as I'm about to say something.\n";
 		}
 
-		dialogue += "he just raises his glass off the table, chugs it and leaves. Completely ignoring the fact that I haven’t even taken a drink yet. What a strange guy but i’m glad he’s finally gone.\n";
+		dialogue += "he just raises his glass off the table, chugs it and leaves. Completely ignoring the fact that I haven’t even taken a drink yet.\n\nWhat a strange guy but i’m glad he’s finally gone.\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}

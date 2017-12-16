@@ -18,7 +18,7 @@ public class scene8 : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4, s5, s6};
@@ -122,7 +122,7 @@ public class scene8 : MonoBehaviour {
 		option2.GetComponentInChildren<Text>().text = "I really don’t care anything about him but still ask him about his situation.";
 
 		// Additional text
-		string dialogue = s + "he sits down and says, “because I have such a bad life man.”\n\nI scan through his face, and I see a crystal clear word “Depressed” floating above his head.\n\n“I just lost my job and my wife is cheating on me.”\n\n“Sorry to hear that man.”\n\n";
+		string dialogue = s + "he sits down and continues, “because I have such a bad life man.”\n\nI scan through his face, and I see a crystal clear word “Depressed” floating above his head.\n\n“I just lost my job and my wife is cheating on me.”\n\n“Sorry to hear that man.”\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}

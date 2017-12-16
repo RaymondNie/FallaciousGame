@@ -18,7 +18,7 @@ public class scene5 : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4, s5, s6, s7};
@@ -156,7 +156,7 @@ public class scene5 : MonoBehaviour {
 		option2.GetComponentInChildren<Text>().text = "Pretend I do.";
 
 		// Additional text
-		string dialogue = s + "“What do you mean problems? Most of them are fake and being made up by the media.”\n\nOK, I get it, Martin you are a Trump supporter. I’m thinking about how I can apply red herring to avoid this conversation but he actually asks first,\n\n “Chris do you support Trump? Don’t get brainwashed by liberal media.”\n\n";
+		string dialogue = s + "“What do you mean problems? Most of them are fake and being made up by the media.”\n\nOK, I get it, Martin you are a Trump supporter. I’m thinking about how I can apply red herring to avoid this conversation but he actually asks first,\n\n“Chris do you support Trump? Don’t get brainwashed by liberal media.”\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}

@@ -18,7 +18,7 @@ public class scene7 : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4, s5, s6};
@@ -73,7 +73,7 @@ public class scene7 : MonoBehaviour {
 				dialogue = "“Explain the bet..”\n\n";
 				s2 (dialogue);
 			} else if (option == 2) {
-				dialogue = "“I never bet. Sorry bro.”\n\n“Don’t reject so quick. Let me explain in detail.”\n\n";
+				dialogue = "“I never bet. Sorry bro.”\n\n“Hey don't be so quick to turn me down. Let me explain the details. ";
 				s2 (dialogue);
 			}
 		} else if (currState == State.s2) {
@@ -118,8 +118,8 @@ public class scene7 : MonoBehaviour {
 		option1.GetComponentInChildren<Text>().text = "“Let's do it.”";
 
 		// Additional text
-		string dialogue = s + "“I got two coins here.“, he then waves his hand and call a waiter’s name, “My bro Tony works here and wants to give you a chance for free beer. Of course with some risk though.”\n\nHis voice sounds so much warmer than that of a gambler.\nTony then comes with two bottles of unknown brand lagers.\n\n";
-		dialogue += "“Have you heard of prisoner’s dilemma? Two loonies, one for you sir and one for my friend Mike. You both choose one side and reveal at the same time. If you both choose head, two beers all on me; If one head and one tail, the guy with head needs to pay both beers; If you all have tails, just pay your own beers. Maximum 20 bucks and no taxes here bro. Sounds fair?”\n\n";
+		string dialogue = s + "I got two coins here.“, he then waves his hand and call a waiter’s name, “My bro Tony works here and wants to give you a chance for free beer. Of course with some risk though.”\n\nHis voice sounds so much warmer than that of a gambler.\n\nTony then comes with two bottles of unknown brand lagers.\n\n";
+		dialogue += "“Have you heard of prisoner’s dilemma? Two loonies, one for you sir and one for my friend Mike. You both choose one side and reveal at the same time. If you both choose head, two beers all on me; If we get one head and one tail, the guy with heads needs to pay for both beers; If you both choose tails, just pay for your own beers. Maximum 20 bucks and no taxes here bro. Sounds fair?”\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}

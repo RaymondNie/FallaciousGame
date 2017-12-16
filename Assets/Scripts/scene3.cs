@@ -18,7 +18,7 @@ public class scene3 : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4, s5, s6};

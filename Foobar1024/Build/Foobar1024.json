@@ -1,0 +1,11 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Foobar1024.data.unityweb",
+"asmCodeUrl": "Foobar1024.asm.code.unityweb",
+"asmMemoryUrl": "Foobar1024.asm.memory.unityweb",
+"asmFrameworkUrl": "Foobar1024.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

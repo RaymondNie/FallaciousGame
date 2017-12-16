@@ -18,7 +18,7 @@ public class scene6 : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4, s5, s6};
@@ -36,8 +36,8 @@ public class scene6 : MonoBehaviour {
 		option2.GetComponentInChildren<Text>().text = "“I cooked a steak. How about you?”";
 
 		// Starting text
-		string dialogue = "This beautiful lady comes and reaches her hand out, “Erin. Nice to meet you.”\n\n“Chris. Good to meet you too.”\n\nWell, I should come to “foo bar” more often.\n\n";
-		dialogue += "She sits down.\n\nShe puts her hands on the table.\n\nShe looks at me.\n\nCome on man, say something.\n\nWell, she starts the conversation first: “Have you had dinner yet?”\n\n";
+		string dialogue = "This beautiful lady comes and reaches her hand out, “Erin. Nice to meet you.”\n\n“Chris. Good to meet you too.”\nI should come to “foo bar” more often.\n\n";
+		dialogue += "She sits down.\n\nShe puts her hands on the table.\n\nShe looks at me.\n\nCome on man, say something...\n\nShe starts the conversation first, “Have you had dinner yet?”\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
@@ -71,7 +71,7 @@ public class scene6 : MonoBehaviour {
 			string dialogue;
 			if (option == 1) {
 				dialogue = "“Just some salad. How about you?”\n\n";
-				dialogue += "“Salad? Me too, I’m vegetarian. Are you?”\n\n“Sorry I am not.”\n\n“You should try it. You finished your first step by having only salad tonight.”\n\n";
+				dialogue += "“Salad? Me too, I’m vegetarian. Are you?”\n\n“Sorry I am not.”\n\n“You should try it. You've already completed your first step by having only salad tonight.”\n\n";
 				s2 (dialogue);
 			} else if (option == 2) {
 				dialogue = "“I cooked a steak. How about you?”\n\n";
@@ -81,10 +81,10 @@ public class scene6 : MonoBehaviour {
 		} else if (currState == State.s2) {
 			string dialogue;
 			if (option == 1) {
-				dialogue = "“Might try it sometime soon.”\n\n“Excellent. You will thank me someday.”\n\n";
+				dialogue = "“Might try it sometime soon.”\n\n“Excellent. You will thank me someday.” ";
 				s3 (dialogue);
 			} else if (option == 2) {
-				dialogue = "“Nah I think I will stay stick with being a carnivore”\n\n“Well, can’t say I didn’t try.”\n\n";
+				dialogue = "“Nah I think I will stay stick with being a carnivore”\n\n“Well, can’t say I didn’t try.” ";
 				s3 (dialogue);
 			}
 		} else if (currState == State.s3) {
@@ -125,7 +125,7 @@ public class scene6 : MonoBehaviour {
 		option2.GetComponentInChildren<Text>().text = "“Nah I think I will stay stick with being a carnivore”";
 		 
 		// Additional text
-		string dialogue = s + "She then continues to talk about the benefits of being a vegetarian, but I kind of lose interest in the conversation and just stare at her.\n\nBefore my imagination started getting too strange, she interrupts my thought and asks: “Have you been convinced to become a vegetarian now?”\n\nAs a meat lover I hesitate, but don’t really want to say no here.\n\n";
+		string dialogue = s + "She then continues to talk about the benefits of being a vegetarian, but I kind of lose interest in the conversation and just stare at her.\n\nBefore my imagination starts getting too strange, she interrupts my thoughts and asks, “Have you been convinced to become a vegetarian now?”\n\nAs a meat lover I hesitate, but don’t really want to say no here.\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
@@ -141,7 +141,7 @@ public class scene6 : MonoBehaviour {
 
 		// Additional text
 		string dialogue = s + "she laughs, “By the way, what do you do during the day?”\n\n“Oh I’m a professor who teaches logic.”\n\n“That’s really special. Logic. Emm...what are some interesting things that you teach about?”\n\n";
-		dialogue += "Finally, my years of study have have culminated to this moment. Logic is such a huge topic though.\n\nI think of something that might be fun. : “Did you know that Hitler, the Nazi leader, is also a vegetarian?”";
+		dialogue += "Finally, my years of study have have culminated to this moment. Logic is such a huge topic though.\n\nI think of something that might be fun.\n\n “Did you know that Hitler, the Nazi leader, is also a vegetarian?”\n\n";
 		dialogue += "“Oh really? That’s surprising. But are you sure you are not making this up?”\n\n";
 		dialogue += "“No definitely not. He doesn’t even drink.”\n\n“Well, I do drink so that’s nice. Just sharing one habit with Hitler should be fine.”\n\n“Don’t feel bad for yourself. You are actually in a classic fallacy called bad company fallacy, or guilt by association. Basically, just because you did the same thing as some bad people doesn’t necessarily mean you are guilty. For example, Hitler went to washroom and we do as well, right?”\n\n“Wow is the kind of stuff that you teach? Sounds like fun.”\n\n“Of course! In this situation, we actually have a specific Latin phrase for fallacies too, for example this one is called ‘reductio ad Hitlerum’. “ \n\nI’m so glad i could remember the Latin name, hoping that it sounds impressive. \n\nThinking of what part of logic should I introduce to her next, she says: “You are such a fun man. But I still cannot understand why Hitler was a vegetarian. Well, have to go now my friends are waiting me.”\n\n";
 		dialogue += "Clearly she still doesn’t fully understand the fallacy.\n\n";

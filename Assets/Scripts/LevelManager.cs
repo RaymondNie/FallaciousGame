@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
-	public static  List<string> levelList = new List<string>() {"Scene1", "Scene2", "Scene3", "Scene6", "Scene7", "Scene8", "Scene9"};
+	public static  List<string> levelList = new List<string>() {"Scene1", "Scene2", "Scene3", "Scene5", "Scene6", "Scene7", "Scene8", "Scene9"};
 	public static int levelCounter;
 
 	void Start(){
@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	static void initializeLevels(){
-		levelList = new List<string> () {"Scene1", "Scene2", "Scene3", "Scene6", "Scene7", "Scene8", "Scene9"};
+		levelList = new List<string> () {"Scene1", "Scene2", "Scene3", "Scene5", "Scene6", "Scene7", "Scene8", "Scene9"};
 	}
 
 	public static void load_level(){

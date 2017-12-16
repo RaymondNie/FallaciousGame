@@ -17,7 +17,7 @@ public class startScene : MonoBehaviour {
 	// Printing text
 	private IEnumerator scrollingTextRoutine;
 	private string currText; // curr text keeps track of the entire current dialogue
-	float scrollSpeed = 0.0125f;
+	float scrollSpeed = 0.0175f;
 
 	// Different states of the scene
 	enum State{s1, s2, s3, s4};
@@ -35,7 +35,7 @@ public class startScene : MonoBehaviour {
 		option2.text = "Nah I would not go in a bar with such a stupid name.\n";
 
 		// Starting text
-		string dialogue = "Boring Wednesday nothing as usual.\n\nReally nothing to do after dinner.\n\nI look outside my car window and cannot find anything that could inspire a night plan.\n\nDriving without any purpose in this little town is probably the only way to kill my night time.\n\nNah wait, is that a new bar? Oh come on, why does the bar have the name “foo”?\n\nI must have missed this bar before...\n";
+		string dialogue = "Boring Wednesday, nothing to do as usual.\n\nI look outside my car window and cannot find anything that could inspire a night plan.\n\nDriving without any purpose in this little town is probably the only way to kill my night.\n\nWait a second, is that a new bar? Oh come on, why does the bar have the name “foo”?\n\nI must have missed this bar before...\n\n";
 
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
@@ -62,15 +62,15 @@ public class startScene : MonoBehaviour {
 			if (option) {
 				dialogue = "\"Well, It’s time to check it out.\"\n\n";
 			} else {
-				dialogue = "\"Nah I would not go in a bar with such a stupid name. But seriously, what can I do tonight? Watch Maple Leafs play at home? Already know we are going to lose. Forget it. Just go check the bar then.\"\n\n";
+				dialogue = "\"Nah I would not go in a bar with such a stupid name. But seriously, what can I do tonight? Watch Maple Leafs play at home? Already know we are going to lose. Forget it. Just go check out the bar Chris.\"\n\n";
 			}
 			s2 (dialogue);
 		} else if (currState == State.s2) {
 			string dialogue;
 			if (option) {
-				dialogue = "\"Just Bud Light please.\"\n\n“No problem man.”, he replies\n\n";
+				dialogue = "\"Just Bud Light please.\"\n\n“No problem man.”, he replies.å\n\n";
 			} else {
-				dialogue = "\"Any recommendation?\", I ask\n\n\"We got a foobar special drink. Wanna try?\", he replies\n“Sure”";
+				dialogue = "\"Any recommendation?\", I ask.\n\n\"We got a foobar special drink. Wanna try?\"\n\n“Sure”";
 			}
 			s3 (dialogue);
 		} else if (currState == State.s3 || currState == State.s4) {
@@ -106,7 +106,7 @@ public class startScene : MonoBehaviour {
 		option2.text = "Any recommendation?\n";
 
 		// Additional text
-		string dialogue = s + "I park along the street and walk inside. Doesn't look like anything special.\n\n“Alone, Sir?” The waiter asks.\n\n“Yeah but get me a booth thanks.”\n\nI just don’t understand why people like to sit on all those barstools. So uncomfortable.\n\n“What do you want, sir?”\n\n";
+		string dialogue = s + "I park along the street and walk inside. Doesn't look like anything special.\n\n“Alone, Sir?”, the waiter asks.\n\n“Yeah but get me a booth thanks.”\n\nI just don’t understand why people like to sit those barstools. So uncomfortable.\n\n“What do you want, sir?”\n\n";
 		scrollingTextRoutine = scrollingText (dialogue);
 		StartCoroutine (scrollingTextRoutine);
 	}
